@@ -3,7 +3,7 @@ type ProductNameProps = {
 };
 
 function ProductName({ name }: ProductNameProps) {
-  return <div className="font-bold text-lg">{name}</div>;
+  return <div className="font-bold text-xl">{name}</div>;
 }
 
 export default ProductName;

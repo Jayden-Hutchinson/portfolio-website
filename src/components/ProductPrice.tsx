@@ -3,7 +3,7 @@ type ProductPriceProps = {
 };
 
 function ProductPrice({ price }: ProductPriceProps) {
-  return <div className="text-2xl">${price}</div>;
+  return <div className="text-2xl font-medium">${price}</div>;
 }
 
 export default ProductPrice;

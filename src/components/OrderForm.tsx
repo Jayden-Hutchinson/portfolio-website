@@ -21,11 +21,12 @@ function OrderForm() {
   );
 
   return (
-    <div className="flex flex-col">
-      <div className="text-3xl">{ORDER_FORM_TITLE}</div>
+    <div className="flex flex-col p-4">
+      <div className="text-2xl">{ORDER_FORM_TITLE}</div>
 
       {/* Customer Info */}
-      <OrderFormInput type="text" name="name" placeholder="Name" />
+      <OrderFormInput type="text" name="name" placeholder="First Name" />
+      <OrderFormInput type="text" name="name" placeholder="Last Name" />
       <OrderFormInput type="email" name="email" placeholder="Email" />
 
       {/* Customer Address */}
@@ -38,7 +39,7 @@ function OrderForm() {
         return (
           <ProductQuantity
             key={product.name}
-            name={product.name}
+            product={product}
             quantity={quantities[product.name] ?? 0}
             onQuantityChange={(quantity) =>
               updateQuantity(product.name, quantity)
@@ -47,7 +48,11 @@ function OrderForm() {
         );
       })}
 
-      <div>${orderCost}</div>
+      <div className="flex justify-between px-4 py-4">
+        <div>Total</div>
+        <div>0</div>
+        <div>$0</div>
+      </div>
     </div>
   );
 }
