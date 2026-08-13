@@ -1,11 +1,11 @@
 import { ProductsData } from "../data/ProductsData";
-import Product from "./Product";
+import ProductCard from "./ProductCard";
 
 function Products() {
   return (
-    <div className="w-full bg-black">
+    <div className="w-full flex justify-center">
       {ProductsData.map((productData) => (
-        <Product key={productData.name} {...productData} />
+        <ProductCard key={productData.name} {...productData} />
       ))}
     </div>
   );

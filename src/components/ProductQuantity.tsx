@@ -1,8 +1,9 @@
-import type { ProductProps } from "./Product";
+import type { Product } from "../data/ProductsData";
+import DollarAmount from "./DollarAmount";
 import QuantityInput from "./QuantityInput";
 
 type ProductQuantityProps = {
-  product: ProductProps;
+  product: Product;
   quantity: number;
   onQuantityChange: (quantity: number) => void;
 };
@@ -12,12 +13,12 @@ function ProductQuantity({
   quantity,
   onQuantityChange,
 }: ProductQuantityProps) {
+  const price = quantity * product.price;
   return (
-    <div className="flex justify-between px-4 py-4">
-      <div className="text-lg">{product.name}</div>
-      {/* <div>${product.price}</div> */}
+    <div className="flex justify-between px-4 py-4 mt-5">
+      <div className="text-xl font-heading">{product.name}</div>
       <QuantityInput quantity={quantity} onQuantityChange={onQuantityChange} />
-      <div>$0</div>
+      <DollarAmount amount={price} />
     </div>
   );
 }
