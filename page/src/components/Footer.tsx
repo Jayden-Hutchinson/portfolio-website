@@ -1,4 +1,4 @@
-const LOCATION = "Coquitlam, BC, Canada";
+const LOCATION = "Port Coquitlam, BC, Canada";
 const EMAIL = "smokd@gmail.com";
 // const ESTABLISHED = "2024";
 const COMPANY_NAME = "SMOKD";
