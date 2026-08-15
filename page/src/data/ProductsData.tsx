@@ -1,3 +1,5 @@
+import sweetSriracha from "../assets/sweet_sriracha.jpg";
+
 export type Product = {
   image: string;
   name: string;
@@ -9,7 +11,7 @@ export type Product = {
 // 80 grams = $10
 export const ProductsData: Product[] = [
   {
-    image: "src/assets/sweet_sriracha.jpg",
+    image: sweetSriracha,
     name: "Sweet Sriracha",
     price: 10,
     weightGrams: 80,
