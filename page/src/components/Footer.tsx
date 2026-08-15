@@ -1,5 +1,5 @@
 const LOCATION = "Port Coquitlam, BC, Canada";
-const EMAIL = "smokd@gmail.com";
+const EMAIL = "smokdjerky@gmail.com";
 // const ESTABLISHED = "2024";
 const COMPANY_NAME = "SMOKD";
 function Footer() {
