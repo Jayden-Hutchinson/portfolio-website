@@ -9,7 +9,7 @@ export type Product = {
 // 80 grams = $10
 export const ProductsData: Product[] = [
   {
-    image: "",
+    image: "src/assets/sweet_sriracha.jpg",
     name: "Sweet Sriracha",
     price: 10,
     weightGrams: 80,
