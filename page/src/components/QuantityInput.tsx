@@ -16,7 +16,7 @@ function QuantityInputButton({
 }: QuantityInputButtonProps) {
   return (
     <button
-      className="w-10 font-bold text-lg cursor-pointer"
+      className="w-8 font-bold text-lg cursor-pointer"
       onClick={onClick}
       disabled={disabled}
     >
@@ -42,7 +42,7 @@ function QuantityInput({ quantity, onQuantityChange }: QuantityInputProps) {
         disabled={quantity <= 0}
       />
 
-      <input className="w-10 text-center" value={quantity} />
+      <input className="w-5 text-center" value={quantity} />
       <QuantityInputButton icon="+" onClick={incrementQuantity} />
     </div>
   );
