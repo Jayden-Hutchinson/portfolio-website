@@ -3,6 +3,28 @@ type QuantityInputProps = {
   onQuantityChange: (quantity: number) => void;
 };
 
+type QuantityInputButtonProps = {
+  icon: string;
+  onClick: () => void;
+  disabled?: boolean;
+};
+
+function QuantityInputButton({
+  icon,
+  onClick,
+  disabled,
+}: QuantityInputButtonProps) {
+  return (
+    <button
+      className="w-10 font-bold text-lg cursor-pointer"
+      onClick={onClick}
+      disabled={disabled}
+    >
+      {icon}
+    </button>
+  );
+}
+
 function QuantityInput({ quantity, onQuantityChange }: QuantityInputProps) {
   function incrementQuantity() {
     onQuantityChange(++quantity);
@@ -14,22 +36,14 @@ function QuantityInput({ quantity, onQuantityChange }: QuantityInputProps) {
 
   return (
     <div className="border flex items-center rounded-md p-1">
-      <button
-        className="w-5 font-bold cursor-pointer"
+      <QuantityInputButton
+        icon="-"
         onClick={decrementQuantity}
         disabled={quantity <= 0}
-      >
-        -
-      </button>
+      />
 
-      <input className="w-5 text-center" value={quantity} />
-
-      <button
-        className="w-5 cursor-pointer font-bold"
-        onClick={incrementQuantity}
-      >
-        +
-      </button>
+      <input className="w-10 text-center" value={quantity} />
+      <QuantityInputButton icon="+" onClick={incrementQuantity} />
     </div>
   );
 }

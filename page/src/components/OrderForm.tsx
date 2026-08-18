@@ -37,6 +37,7 @@ function OrderForm() {
           name="street"
           placeholder="Street Address"
         />
+
         <OrderFormInput type="text" name="city" placeholder="City" />
         <OrderFormInput type="text" name="province" placeholder="Province" />
         <OrderFormInput
@@ -63,7 +64,7 @@ function OrderForm() {
           <DollarAmount amount={orderCost} />
         </div>
         <div>
-          <button className="mt-10 hover:bg-red-900 border-4 cursor-pointer border-red-900 w-fit px-5 py-2">
+          <button className="mt-18 active:border-red-800 active:bg-red-800 hover:bg-red-900 border-6 cursor-pointer border-red-900 w-fit px-5 py-3">
             Confirm Order
           </button>
         </div>

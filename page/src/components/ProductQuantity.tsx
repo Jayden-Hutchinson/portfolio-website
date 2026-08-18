@@ -14,6 +14,7 @@ function ProductQuantity({
   onQuantityChange,
 }: ProductQuantityProps) {
   const price = quantity * product.price;
+
   return (
     <div className="flex justify-between px-4 py-4 mt-5">
       <div className="text-xl font-heading">{product.name}</div>
