@@ -13,8 +13,8 @@ export const ProductsData: Product[] = [
   {
     image: sweetSriracha,
     name: "Sweet Sriracha",
-    price: 10,
-    weightGrams: 80,
+    price: 20,
+    weightGrams: 160,
     description: "Sweet and spicy flavors with the bold kick of sriracha.",
   },
 ];
