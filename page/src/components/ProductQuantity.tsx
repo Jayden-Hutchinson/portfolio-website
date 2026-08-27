@@ -1,4 +1,4 @@
-import type { Product } from "../data/ProductsData";
+import type { Product } from "../data/productsData";
 import DollarAmount from "./DollarAmount";
 import QuantityInput from "./QuantityInput";
 
@@ -16,8 +16,8 @@ function ProductQuantity({
   const price = quantity * product.price;
 
   return (
-    <div className="flex justify-between px-4 py-4 mt-5">
-      <div className="text-xl font-heading">{product.name}</div>
+    <div className="mt-5 flex justify-between px-4 py-4">
+      <div className="font-heading text-xl">{product.name}</div>
       <QuantityInput quantity={quantity} onQuantityChange={onQuantityChange} />
       <DollarAmount amount={price} />
     </div>

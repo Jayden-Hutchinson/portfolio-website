@@ -1,4 +1,4 @@
-import type { Product } from "../data/ProductsData";
+import type { Product } from "../data/productsData";
 import ProductImage from "./ProductImage";
 import ProductInformation from "./ProductInformation";
 
@@ -10,7 +10,7 @@ function ProductCard({
   description,
 }: Product) {
   return (
-    <div className="flex flex-col gap-4 justify-center w-xs text-start">
+    <div className="flex w-xs flex-col justify-center gap-4 text-start">
       <ProductImage image={image} />
       <ProductInformation
         name={name}
