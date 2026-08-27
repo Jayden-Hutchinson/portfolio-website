@@ -1,18 +1,6 @@
-/**
- * Welcome to Cloudflare Workers! This is your first worker.
- *
- * - Run `npm run dev` in your terminal to start a development server
- * - Open a browser tab at http://localhost:8787/ to see your worker in action
- * - Run `npm run deploy` to publish your worker
- *
- * Bind resources to your worker in `wrangler.jsonc`. After adding bindings, a type definition for the
- * `Env` object can be regenerated with `npm run cf-typegen`.
- *
- * Learn more at https://developers.cloudflare.com/workers/
- */
-
+import { createOrderEmail } from './createOderEmail';
 import { ResendAPI } from './resendApi';
-import { Env } from './types';
+import { Env, OrderInformation } from './types';
 
 export default {
 	async fetch(request: Request, env: Env): Promise<Response> {
@@ -20,26 +8,21 @@ export default {
 			return new Response('Method not allowed', { status: 405 });
 		}
 
+		if (!env.RESEND_API_KEY) {
+			return new Response('No Resend API Key provided', { status: 500 });
+		}
+
 		const resendApi = new ResendAPI(env.RESEND_API_KEY);
 
-		const data = await request.json();
+		const data = (await request.json()) as OrderInformation;
 
-		const email = {
-			from: 'orders@yourdomain.com',
-			to: 'owner@yourdomain.com',
-			subject: 'New Order',
-			html: '',
-			// html: `
-			// 	<h1>New Order</h1>
-			// 	<p>Name: ${data.name}</p>
-			// 	<p>Email: ${data.email}</p>
-			// 	<p>Order: ${data.order}</p>
-			// `,
-		};
+		const email = createOrderEmail(data);
+		console.log(email);
 
 		const response = await resendApi.sendEmail(email);
 
-		if (!response.ok) {
+		if (response.error) {
+			console.log(response.error);
 			return new Response('Failed to send email', { status: 500 });
 		}
 

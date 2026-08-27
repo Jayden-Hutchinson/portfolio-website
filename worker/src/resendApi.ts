@@ -1,22 +1,14 @@
+import { Resend } from 'resend';
 import { Email } from './types';
 
 export class ResendAPI {
-	apiKey: string;
+	resend: Resend;
 
 	constructor(apiKey: string) {
-		this.apiKey = apiKey;
+		this.resend = new Resend(apiKey);
 	}
 
-	async sendEmail(email: Email) {
-		const response = await fetch('https://api.resend.com/emails', {
-			method: 'POST',
-			headers: {
-				Authorization: `Bearer ${this.apiKey}`,
-				'Content-Type': 'application/json',
-			},
-			body: JSON.stringify(email),
-		});
-
-		return response;
+	async sendEmail({ from, to, subject, react }: Email) {
+		return await this.resend.emails.send({ from, to, subject, react });
 	}
 }
