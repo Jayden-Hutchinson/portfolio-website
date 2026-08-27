@@ -17,6 +17,7 @@ function QuantityInputButton({
   return (
     <button
       className="w-8 font-bold text-lg cursor-pointer"
+      type="button"
       onClick={onClick}
       disabled={disabled}
     >
