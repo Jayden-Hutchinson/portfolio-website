@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { ProductsData } from "../data/ProductsData";
 import ProductQuantity from "./ProductQuantity";
 import OrderFormInput from "./OrderFormInput";
 import DollarAmount from "./DollarAmount";
 import OrderFormModal, { type ModalState } from "./OrderFormModal";
+import { ProductsData } from "../data/productsData";
 
 const ORDER_FORM_TITLE = "Create Order";
 
