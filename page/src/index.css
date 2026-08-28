@@ -11,9 +11,9 @@
 }
 
 @theme {
-  --color-background: #121212;
-  --color-primary-text: #fcfcfc;
-  --color-secondary-text: #a8a6a0;
+  --color-background: #ffffff;
+  --color-primary: #000000;
+  --color-secondary: #ffffff;
 
   --font-heading: "Barlow";
   --font-sans: "Roboto", sans-serif;
@@ -53,9 +53,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --text: #f3efe6;
-    --text-h: #f3f4f6;
-    --bg: #292a2e;
+    --text: #000000;
+    --bg: #ffffff;
     --border: #33302c;
     --accent: #c084fc;
 
@@ -82,4 +81,14 @@ body {
 
 input {
   outline: none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-text-fill-color: black !important;
+  -webkit-box-shadow: 0 0 0 1000px #eeeeee inset !important;
+  box-shadow: 0 0 0 1000px #eeeeee inset !important;
+  transition: background-color 9999s ease-in-out 0s;
 }

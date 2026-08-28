@@ -159,7 +159,7 @@ function OrderForm() {
         </div>
         <div>
           <button
-            className="mt-18 w-fit cursor-pointer border-6 border-red-900 px-5 py-3 hover:bg-red-900 active:border-red-800 active:bg-red-800"
+            className="hover:text-secondary mt-18 w-fit cursor-pointer border-6 border-red-900 px-5 py-3 hover:bg-red-900 active:border-red-800 active:bg-red-800"
             type="submit"
           >
             Confirm Order

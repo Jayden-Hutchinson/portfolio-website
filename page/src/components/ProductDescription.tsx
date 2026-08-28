@@ -3,7 +3,7 @@ type ProductDescriptionProps = {
 };
 
 function ProductDescription({ description }: ProductDescriptionProps) {
-  return <div className="text-center text-secondary-text">{description}</div>;
+  return <div className="text-primary text-center">{description}</div>;
 }
 
 export default ProductDescription;

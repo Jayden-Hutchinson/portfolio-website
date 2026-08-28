@@ -7,7 +7,7 @@ type OrderFormInputProps = {
 function OrderFormInput({ type, name, placeholder }: OrderFormInputProps) {
   return (
     <input
-      className="border-b py-2 px-4 mb-2"
+      className="mb-2 border-b px-4 py-2 autofill:bg-black"
       type={type}
       name={name}
       placeholder={placeholder}
