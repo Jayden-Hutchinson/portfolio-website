@@ -2,18 +2,18 @@ import { useEffect, useRef } from "react";
 
 const CONTEXT_ID = "2d";
 const FILL_STYLE = "white";
-const STAR_OFFSET = 50;
-const STAR_SIZE = 1;
+// const STAR_OFFSET = 50;
+// const STAR_SIZE = 1;
 
-type Star = {
-  x: number;
-  y: number;
-};
+// type Star = {
+//   x: number;
+//   y: number;
+// };
 
 function StarBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
-  const stars: Star[] = [];
+  // const stars: Star[] = [];
 
   useEffect(() => {
     const canvas = canvasRef.current;
