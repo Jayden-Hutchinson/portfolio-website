@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Barlow";
+  src: url("./assets/fonts/Barlow_Condensed/BarlowCondensed-Medium.ttf");
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("./assets/fonts/Roboto/Roboto-VariableFont_wdth\,wght.ttf");
+}
+
+@theme {
+  --color-background: #000000;
+  --color-primary: #000000;
+  --color-secondary: #ffffff;
+
+  --font-heading: "Barlow";
+  --font-sans: "Roboto", sans-serif;
+
+  --fade-duration: 2s;
+  --animate-fade-in-left: fade-in-left var(--fade-duration) ease-out both;
+  --animate-fade-in-right: fade-in-right var(--fade-duration) ease-out both;
+  --animate-bounce: bounce ease-in-out infinite;
+
+  @keyframes fade-in-left {
+    from {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes fade-in-right {
+    from {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes bounce {
+    0%,
+    20%,
+    100% {
+      transform: translateY(0);
+    }
+
+    10% {
+      transform: translateY(-4px);
+    }
+  }
+}
+
+body {
+  margin: 0;
+}
+
+canvas {
+  width: 3000px;
+  height: 2000px;
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: black;
+  z-index: -1;
+}
+
+#root {
+  margin: 0;
+  padding: 0;
+}
+
+.viewport {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: transparent;
+}
+
+.world {
+  position: absolute;
+  width: 3000px;
+  height: 2000px;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transform: translate(0, 0) scale(1);
+  z-index: 1;
+}
