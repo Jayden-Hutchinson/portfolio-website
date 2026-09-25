@@ -1,5 +1,6 @@
+import AboutMe from "./components/AboutMe";
 import Home from "./components/Home";
-// import Projects from "./components/Projects";
+import Projects from "./components/Projects";
 // import MouseArea from "./components/MouseArea";
 import StarBackground from "./components/StarBackground";
 import Viewport from "./components/Viewport";
@@ -14,6 +15,7 @@ function App() {
         <StarBackground />
         <Home />
         {/* <Projects /> */}
+        <AboutMe />
       </World>
     </Viewport>
   );

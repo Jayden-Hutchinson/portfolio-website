@@ -13,6 +13,25 @@
   --animate-fade-in-left: fade-in-left var(--fade-duration) ease-out both;
   --animate-fade-in-right: fade-in-right var(--fade-duration) ease-out both;
   --animate-bounce: bounce ease-in-out infinite;
+  --animate-spin-slow: spin 4s linear infinite;
+  --animate-blink: blink 1.1s linear infinite;
+
+  @keyframes blink {
+    0%,
+    50% {
+      opacity: 1;
+    }
+    51%,
+    100% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
 
   @keyframes fade-in-left {
     from {
@@ -51,11 +70,12 @@
 
 body {
   margin: 0;
+  color: white;
 }
 
 canvas {
-  width: 3000px;
-  height: 2000px;
+  width: 8000px;
+  height: 8000px;
   position: fixed;
   inset: 0;
   pointer-events: none;
@@ -77,9 +97,9 @@ canvas {
 }
 
 .world {
-  position: absolute;
-  width: 3000px;
-  height: 2000px;
+  position: relative;
+  width: 8000px;
+  height: 8000px;
   background-color: transparent;
   display: flex;
   justify-content: center;

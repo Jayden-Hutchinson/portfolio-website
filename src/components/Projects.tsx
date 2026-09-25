@@ -29,11 +29,11 @@ function Projects() {
   ];
 
   return (
-    <FlexRow className="absolute size-200 flex-wrap justify-between border border-white bg-black/50">
+    <FlexRow className="absolute size-200 flex-wrap items-center justify-between border border-white bg-black/50">
       {projects.map((project, _) => (
         <div
           key={project.name}
-          className="h-30 w-40 rounded-lg border border-white text-white"
+          className="h-40 w-60 rounded-lg border border-white text-white"
         >
           {project.name}
         </div>

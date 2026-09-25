@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import FlexRow from "./FlexRow";
+import ConsoleCursor from "./ConsoleCursor";
 
 type Props = {
   text: string;
@@ -19,7 +20,7 @@ function TypeText({ text, animationDelay, className }: Props) {
       i++;
 
       if (i < text.length) {
-        const delay = Math.random() * 250 + 50;
+        const delay = Math.random() * 100 + 50;
         timeout = setTimeout(typeNext, delay);
       }
     }
@@ -32,7 +33,7 @@ function TypeText({ text, animationDelay, className }: Props) {
   return (
     <FlexRow className={`${className} items-center`}>
       {typeText}
-      {typeText && <div className="h-[1em] w-[0.5em] animate-pulse bg-white" />}
+      {typeText && <ConsoleCursor />}
     </FlexRow>
   );
 }
